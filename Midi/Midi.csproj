@@ -1,116 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F60D8B7B-2D2E-4B94-A736-3783FFE1A25C}</ProjectGuid>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Midi</RootNamespace>
-    <AssemblyName>Midi</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkProfile />
+    <Description>A fork of Tom Lokovic's midi-dot-net library, with some enhancements, namely SysEx and NRPN message support and .NET 6 targeting.</Description>
+    <PackageId>midi-dot-net</PackageId>
+    <Authors>Tom Lokovic</Authors>    
+    <Copyright>Copyright ⓒ 2009 Tom Lokovic</Copyright>
+    <PackageVersion>1.2.0-preview.1</PackageVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageTags>midi</PackageTags>
+    <PackageProjectUrl>https://github.com/ktos/midi-dot-net</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ktos/midi-dot-net</RepositoryUrl>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile></DocumentationFile>
     <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="WindowsBase">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Common\Int14.cs" />
-    <Compile Include="Common\Unmanaged.cs" />
-    <Compile Include="Devices\Clock.cs" />
-    <Compile Include="Devices\DeviceBase.cs" />
-    <Compile Include="Devices\DeviceException.cs" />
-    <Compile Include="Devices\DeviceManager.cs" />
-    <Compile Include="Devices\IInputDevice.cs" />
-    <Compile Include="Devices\InputDevice.cs" />
-    <Compile Include="Devices\IOutputDevice.cs" />
-    <Compile Include="Devices\LongMsg.cs" />
-    <Compile Include="Devices\MessageQueue.cs" />
-    <Compile Include="Devices\OutputDevice.cs" />
-    <Compile Include="Devices\ShortMsg.cs" />
-    <Compile Include="Enums\Channel.cs" />
-    <Compile Include="Enums\Control.cs" />
-    <Compile Include="Enums\Instrument.cs" />
-    <Compile Include="Enums\Interval.cs" />
-    <Compile Include="Enums\Percussion.cs" />
-    <Compile Include="Enums\Pitch.cs" />
-    <Compile Include="Instruments\Chord.cs" />
-    <Compile Include="Instruments\ChordPattern.cs" />
-    <Compile Include="Instruments\Note.cs" />
-    <Compile Include="Instruments\Scale.cs" />
-    <Compile Include="Instruments\ScalePattern.cs" />
-    <Compile Include="Messages\CallbackMessage.cs" />
-    <Compile Include="Messages\ChannelMessage.cs" />
-    <Compile Include="Messages\ControlChangeMessage.cs" />
-    <Compile Include="Messages\DeviceMessage.cs" />
-    <Compile Include="Messages\Message.cs" />
-    <Compile Include="Messages\NoteMessage.cs" />
-    <Compile Include="Messages\NoteOffMessage.cs" />
-    <Compile Include="Messages\NoteOnMessage.cs" />
-    <Compile Include="Messages\NoteOnOffMessage.cs" />
-    <Compile Include="Messages\NrpnMessage.cs" />
-    <Compile Include="Messages\PercussionMessage.cs" />
-    <Compile Include="Messages\PitchBendMessage.cs" />
-    <Compile Include="Messages\ProgramChangeMessage.cs" />
-    <Compile Include="Messages\SysExMessage.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Win32\HMIDIIN.cs" />
-    <Compile Include="Win32\HMIDIOUT.cs" />
-    <Compile Include="Win32\MidiDeviceType.cs" />
-    <Compile Include="Win32\MidiExtraFeatures.cs" />
-    <Compile Include="Win32\MIDIHDR.cs" />
-    <Compile Include="Win32\MIDIINCAPS.cs" />
-    <Compile Include="Win32\MidiInMessage.cs" />
-    <Compile Include="Win32\MidiOpenFlags.cs" />
-    <Compile Include="Win32\MidiOutCaps.cs" />
-    <Compile Include="Win32\MidiOutMessage.cs" />
-    <Compile Include="Win32\MMRESULT.cs" />
-    <Compile Include="Win32\Win32API.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
